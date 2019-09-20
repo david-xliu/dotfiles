@@ -12,7 +12,7 @@ CURRENT_BG='NONE'
   # history and have new information.
   # This is defined using a Unicode escape sequence so it is unambiguously readable, regardless of
   # what font the user is viewing this source code in. Do not replace the
-  # escape sequence with a single literal character.
+  # escape sequence with a single literal caracter.
   # Do not change this! Do not make it '\u2b80'; that is the old, wrong code point.
   SEGMENT_SEPARATOR=$'\ue0b0'
 }
@@ -50,7 +50,7 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.) 刘"
+    prompt_segment black default "%(!.%{%F{yellow}%}.) 刘"
   fi
 }
 
@@ -233,4 +233,4 @@ PL_BRANCH_CHAR=$'\ue0a0'
 
 
 
-RPROMPT='$(git_custom_prompt) %{$fg[white]%}%*'
+RPROMPT='$(git_custom_prompt) %{$fg[white]%}%*'h
