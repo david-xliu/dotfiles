@@ -1,10 +1,8 @@
 # This is Git's per-user configuration file.
 [user]
-	name = david-xliu
+name = david-xliu
   email = davxliu@gmail.com
 
 [core]
   editor = nvim
-# Please adapt and uncomment the following lines:
-#	name = David Liu
-#	email = davxliu@gmail.com
+  
