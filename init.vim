@@ -13,15 +13,23 @@ endif
 "plugins
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
 	Plug 'https://github.com/joshdick/onedark.vim'
 	Plug 'sheerun/vim-polyglot'
 	Plug 'https://github.com/scrooloose/nerdtree.git'
 	Plug 'https://github.com/Xuyuanp/nerdtree-git-plugin'
   Plug 'ryanoasis/vim-devicons'
   Plug 'scrooloose/nerdcommenter'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'dense-analysis/ale'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'mhinz/vim-startify'
 call plug#end()
 
+let g:onedark_color_overrides = {
+\ "black": {"gui": "#1a2129", "cterm": "235", "cterm16": "0" },
+\ "green": {"gui": "#82b586", "cterm": "114", "cterm16": "2" },
+\}
+let g:onedark_terminal_italics = 1
 let g:onedark_hide_endofbuffer = 1
 syntax on
 colorscheme onedark
@@ -29,7 +37,22 @@ colorscheme onedark
 inoremap jj <Esc>
 inoremap jk <Esc>
 inoremap kj <Esc>
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprevious<CR>
+nmap <> :NERDTreeToggle<CR>
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+:command NT NERDTree
 
+hi Cursor guifg=#b3b3b3 guibg=#b3b3b3
+set guicursor=n-v-c:ver25-Cursor
+set guicursor=i:ver25-Cursor
+set guicursor=a:blinkon100
+
+set wildmenu
+set linebreak
 set mouse=a
 set number
 set tabstop=2       " The width of a TAB is set to 4.
@@ -80,9 +103,9 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.branch = ''
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+let g:airline_theme='onedark'
+
