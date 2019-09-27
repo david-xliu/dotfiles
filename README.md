@@ -1,3 +1,6 @@
 # dotfiles
 
-Personal config files and settings for various shells and editors.
+My dotfiles.
+
+This is what my simple setup looks like: 
+
