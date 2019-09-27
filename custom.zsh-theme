@@ -1,22 +1,3 @@
-CURRENT_BG='NONE'
-
-# Special Powerline characters
-
-() {
-  local LC_ALL="" LC_CTYPE="en_US.UTF-8"
-  # NOTE: This segment separator character is correct.  In 2012, Powerline changed
-  # the code points they use for their special characters. This is the new code point.
-  # If this is not working for you, you probably have an old version of the
-  # Powerline-patched fonts installed. Download and install the new version.
-  # Do not submit PRs to change this unless you have reviewed the Powerline code point
-  # history and have new information.
-  # This is defined using a Unicode escape sequence so it is unambiguously readable, regardless of
-  # what font the user is viewing this source code in. Do not replace the
-  # escape sequence with a single literal caracter.
-  # Do not change this! Do not make it '\u2b80'; that is the old, wrong code point.
-  SEGMENT_SEPARATOR=$'\ue0b0'
-}
-
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
 # rendering default background/foreground.
@@ -50,7 +31,7 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.) 刘"
+    prompt_segment black default "%(!.%{%F{yellow}%}.) 刘"
   fi
 }
 
@@ -180,33 +161,17 @@ prompt_status() {
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
 
-# ## Main prompt
-# build_prompt() {
-#   RETVAL=$?
-#   prompt_status
-#   prompt_virtualenv
-#   prompt_context
-#   prompt_dir
-#   prompt_git
-#   prompt_bzr
-#   prompt_hg
-#   prompt_end
-# }
 
-
-
-
-local host_name="%{$fg[red]%}刘"
-local path_string="%{$fg[yellow]%}%~"
-local prompt_string="»"
+local host_name="%{$fg[white]%}刘"
+local path_string="%{$fg[white]%}%~"
+local prompt_string=">"
 
 
 # Make prompt_string red if the previous command failed.
 local return_status="%(?:%{$fg[blue]%}$prompt_string:%{$fg[red]%}$prompt_string)"
 
 
-PROMPT='
-${host_name} ${path_string} ${return_status} %{$reset_color%}'
+PROMPT=$'\n''${host_name} ${path_string} ${return_status} %{$reset_color%}'
 
 # oh-my-zsh $(git_prompt_info) puts 'dirty' behind branch
 git_custom_prompt() {
@@ -218,19 +183,12 @@ git_custom_prompt() {
   fi
 }
 
-
-
-
 build_prompt() {
   prompt_git
   prompt_bzr
   prompt_hg
 }
 
-
 PL_BRANCH_CHAR=$'\ue0a0'
 
-
-
-
-RPROMPT='$(git_custom_prompt) %{$fg[white]%}%*'h
+RPROMPT='$(git_custom_prompt)' 
