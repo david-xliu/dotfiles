@@ -29,3 +29,8 @@ This is what my setup looks like:
 
 ![6](/pics/6.png)
 <p align="center"> Nvim "focus mode". Linter caught an error :( </p>
+
+---
+
+Font is IBM plex mono. Download the nerd font version for extra fancy
+Setup inspired by [Paul Rouget](https://github.com/paulrouget).
