@@ -34,4 +34,4 @@ This is what my setup looks like:
 
 Font is [IBM plex mono](https://www.ibm.com/plex/). 
 Download the [nerd font](https://github.com/ryanoasis/nerd-fonts) version for extra fun :dizzy:  
-Setup inspired by [Paul Rouget](https://github.com/paulrouget).
+Setup inspired by [Paul Rouget]'s(https://github.com/paulrouget).
