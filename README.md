@@ -18,3 +18,14 @@ This is what my setup looks like:
 ---
 
 ![4](/pics/4.png)
+<p align="center"> Nvim session with modified One Dark theme. </p>
+
+---
+
+![5](/pics/5.png)
+<p align="center"> NERDTree with icons and stuff. </p>
+
+---
+
+![6](/pics/6.png)
+<p align="center"> Nvim "focus mode". Linter caught an error :( </p>
