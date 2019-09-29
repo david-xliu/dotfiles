@@ -89,7 +89,7 @@ hi NERDTreeDirSlash guifg=#777777
 hi NERDTreeCWD guifg=#cccccc
 hi NerdTreeFlags guifg=#aa9269
 
-" FocusMode *Wip*
+" FocusMode *Wip* doesn't work well with NERDTree on
 function! ToggleFocusMode()
   if (&foldcolumn != 3)
     set laststatus=0
