@@ -4781,7 +4781,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
+<<<<<<< HEAD
 	<date>2019-09-30T01:24:12Z</date>
+=======
+	<date>2019-09-29T21:21:32Z</date>
+>>>>>>> update iterm config
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
