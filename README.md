@@ -1,4 +1,4 @@
-# dotfiles
+# ~/.dotfiles
 
 This is what my setup looks like:  
 
