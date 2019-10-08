@@ -32,7 +32,24 @@ let g:onedark_color_overrides = {
 \}
 let g:onedark_terminal_italics = 1 " enable italics
 let g:onedark_hide_endofbuffer = 1 " hide ~ after eof
+let g:go_fmt_command = "goimports"
+" enable syntax highlighting for Go
+let g:go_highlight_function_calls = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_trailing_whitespace_error = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
 syntax on
+if (has("autocmd"))
+  augroup colorextend
+    autocmd!
+    autocmd ColorScheme * call onedark#extend_highlight("goFunctionCall", { "fg": { "gui": "#67adb7"} })
+    autocmd ColorScheme * call onedark#extend_highlight("Type", { "fg": { "gui": "#b080be" } })
+    autocmd ColorScheme * call onedark#extend_highlight("Function", { "fg": { "gui": "#5cadf1" } })
+  augroup END
+endif
 colorscheme onedark
 
 " Some custom mappings
@@ -64,10 +81,11 @@ set shiftwidth=2    " Indents will have a width of 2
 set softtabstop=2   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 set smarttab	      " :help smarttab
+set foldmethod=syntax
 
 " Status bar settings
 set background=dark
-set statusline=%=%f\ %m\ %P
+set statusline=%=%c\ %f\ %m\ %P
 set fillchars=vert:\ ,stl:\ ,stlnc:\ 
 set laststatus=2
 hi StatusLine guibg=None
