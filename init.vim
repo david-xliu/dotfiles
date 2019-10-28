@@ -18,6 +18,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'dense-analysis/ale'
   Plug 'airblade/vim-gitgutter'
   Plug 'mhinz/vim-startify'
+  Plug 'ap/vim-buftabline'
 call plug#end()
 
 " mute onedark theme colors
@@ -59,10 +60,12 @@ inoremap kj <Esc>
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprevious<CR>
 nmap <> :NERDTreeToggle<CR>
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+map <C-w>j <C-W>j
+map <C-w>k <C-W>k
+map <C-w>h <C-W>h
+map <C-w>l <C-W>l
+map <C-s> :set showtabline=2<CR>
+map <C-d> :set showtabline=0<CR>
 :command NT NERDTree
 
 " Customize cursor
