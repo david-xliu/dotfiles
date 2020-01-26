@@ -68,12 +68,6 @@ map <C-s> :set showtabline=2<CR>
 map <C-d> :set showtabline=0<CR>
 :command NT NERDTree
 
-" Customize cursor
-hi Cursor guifg=#b3b3b3 guibg=#b3b3b3
-set guicursor=n-v-c:ver25-Cursor
-set guicursor=i:ver25-Cursor
-set guicursor=a:blinkon100
-
 " misc settings
 set wildmenu
 set linebreak
@@ -85,6 +79,10 @@ set softtabstop=2   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 set smarttab	      " :help smarttab
 set foldmethod=syntax
+
+" cursor settings
+set guicursor=a:hor20
+
 
 " Status bar settings
 set background=dark
