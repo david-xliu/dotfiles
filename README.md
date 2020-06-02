@@ -28,7 +28,7 @@ This is what my setup looks like:
 ---
 
 ![6](/pics/6.png)
-<p align="center"> Nvim "focus mode". Linter caught an error :( </p>
+<p align="center"> Nvim "focus mode". </p>
 
 ---
 
