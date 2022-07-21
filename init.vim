@@ -6,6 +6,8 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+let g:polyglot_disabled = ['elm']
+
 "plugins
 call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'https://github.com/joshdick/onedark.vim'
@@ -19,6 +21,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'mhinz/vim-startify'
   Plug 'ap/vim-buftabline'
+  Plug 'lervag/vimtex'
+  Plug 'ycm-core/YouCompleteMe'
+  Plug 'elmcast/elm-vim'
 call plug#end()
 
 " mute onedark theme colors
@@ -68,21 +73,14 @@ map <C-s> :set showtabline=2<CR>
 map <C-d> :set showtabline=0<CR>
 :command NT NERDTree
 
-" misc settings
-set wildmenu
-set linebreak
-set mouse=a
-set number
-set tabstop=2       " The width of a TAB is set to 2.
-set shiftwidth=2    " Indents will have a width of 2
-set softtabstop=2   " Sets the number of columns for a TAB
-set expandtab       " Expand TABs to spaces
-set smarttab	      " :help smarttab
-set foldmethod=syntax
-
 " cursor settings
 set guicursor=a:hor20
 
+" elm
+let g:elm_format_autosave = 1
+
+" vim-tex
+let g:tex_flavor = 'latex'
 
 " Status bar settings
 set background=dark
@@ -131,3 +129,24 @@ let g:ale_sign_error = '✕'
 let g:ale_sign_warning = '!'
 highlight ALEWarningsign guifg=#cda377
 let g:ale_lint_on_insert_leave = 1
+let g:ale_linters = {'cpp': ['g++']}
+let g:ale_cpp_cc_options = '-Wall -O2 -std=c++17'
+
+" enable autocomplete for Vimtex with YouCompleteMe
+if !exists('g:ycm_semantic_triggers')
+  let g:ycm_semantic_triggers = {}
+endif
+au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+
+" misc settings
+set wildmenu
+set linebreak
+set mouse=a
+set number
+set tabstop=4       " The width of a TAB is set to 2.
+set shiftwidth=4    " Indents will have a width of 2
+set softtabstop=4   " Sets the number of columns for a TAB
+set expandtab       " Expand TABs to spaces
+set smarttab	      " :help smarttab
+set foldmethod=syntax
+set foldlevelstart=20
