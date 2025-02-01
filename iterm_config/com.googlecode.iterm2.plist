@@ -10,6 +10,8 @@
 	<true/>
 	<key>AlternateMouseScroll</key>
 	<true/>
+	<key>CopyLastNewline</key>
+	<false/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>GitHub-Dark</key>
@@ -918,12 +920,16 @@
 			</dict>
 			<key>Ansi 3 Color (Light)</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.7803921568627451</real>
+				<real>0.40232604742050171</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.93333333333333335</real>
+				<real>0.83877134323120117</real>
 				<key>Red Component</key>
-				<real>0.97254901960784312</real>
+				<real>0.9433867335319519</real>
 			</dict>
 			<key>Ansi 4 Color</key>
 			<dict>
@@ -4292,7 +4298,7 @@
 	<key>SeparateStatusBarsPerPane</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowPaneTitles</key>
 	<true/>
 	<key>SoundForEsc</key>
@@ -4313,6 +4319,11 @@
 	<integer>40</integer>
 	<key>TerminalVMargin</key>
 	<integer>21</integer>
+	<key>ToolbeltTools</key>
+	<array>
+		<string>Profiles</string>
+		<string>Command History</string>
+	</array>
 	<key>UseBorder</key>
 	<true/>
 	<key>VisualIndicatorForEsc</key>
